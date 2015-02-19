@@ -26,7 +26,6 @@ if(geo_position_js.init()) {
                 $('#low').html(' ' + data.TemperatureMinTime);
                 $('#daysum').html(' ' + data.daily.summary);
                 $('#icon').html('<div id=' + data.currently.icon + '></div>');
-                $('#color').html('<div class=' + data.currently.icon + 'body></div>');
             });
 
             console.log(url + apiKey + "/" + p.coords.latitude.toFixed(2) + "," + p.coords.longitude.toFixed(2) + "?callback=?");
