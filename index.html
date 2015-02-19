@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Rochester Weather</title>
+    <title>Weather</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300' rel='stylesheet' type='text/css'>
     <link href='css/main.css' rel='stylesheet' type='text/css'>
     <style>
@@ -81,7 +81,7 @@
 
 <body onload="b()" class="clear-nightbody ">
     <div class="content">
-        <h1>Rochester, MN Weather</h1>
+        <h1>Weather</h1>
         <p id="icon"></p>
         <p id="nowsummary">Loading...</p>
         <div class="current">
@@ -99,33 +99,13 @@
         <p class="datacredit">Powered by <a href="http://forecast.io/">Forecast</a>
         </p>
     </div>
-    <script>
-        function b() {
 
-            var apiKey = 'bf9ece433d3c64b82ee633014173a8b4';
-            var url = 'https://api.forecast.io/forecast/';
-            var lati = 44.0133;
-            var longi = -92.4223;
-            var data;
-
-            $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function (data) {
-                //console.log(data);
-                $('#temp').html(' ' + data.currently.temperature + ' ºF');
-                $('#feelslike').html(' ' + data.currently.apparentTemperature + ' ºF');
-                $('#nowsummary').html(' ' + data.currently.summary);
-                $('#high').html(' ' + data.daily.temperatureMin);
-                $('#low').html(' ' + data.TemperatureMinTime);
-                $('#daysum').html(' ' + data.daily.summary);
-                $('#icon').html('<div id=' + data.currently.icon + '></div>');
-                $('#color').html('<div class=' + data.currently.icon + 'body></div>');
-            });
-
-        }
-    </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/geo-location-javascript/0.4.8/geo-min.js"></script>
+    <script src="weatherapi.js"></script>
+    
+    
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/skycons.js"></script>
-
 </body>
 
 </html>
